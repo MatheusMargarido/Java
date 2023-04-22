@@ -42,19 +42,19 @@ public class Matriz {
 
 		}
 		System.out.println("\nTrocando os elementos da diagonal principal com a secundaria");
-		for(i = 0; i < matriz.length; i++) {
-	         temp = matriz[i][i];
-	         matriz[i][i] = matriz[i][matriz.length - i - 1];
-	         matriz[i][matriz.length - i - 1] = temp;
+		for (i = 0; i < matriz.length; i++) {
+			temp = matriz[i][i];
+			matriz[i][i] = matriz[i][matriz.length - i - 1];
+			matriz[i][matriz.length - i - 1] = temp;
 		}
-		for( i = 0; i < matriz.length; i++) {
-	         for( j = 0; j < matriz[i].length; j++) {
-	            System.out.printf("%2d ",matriz[i][j]);
-	         }
-	         System.out.println();
-	      }
+		for (i = 0; i < matriz.length; i++) {
+			for (j = 0; j < matriz[i].length; j++) {
+				System.out.printf("%2d ", matriz[i][j]);
+			}
+			System.out.println();
 		
-
+	      }
+	
 	}
 
 }
