@@ -7,23 +7,26 @@ public class VetorNumerosNegativos {
 	public static void main(String[] args) {
 
 		Scanner in = new Scanner(System.in);
-		double[] vet = new double[10];
-		int i;
+		double[] vetor = new double[10];
+		int cont = 0;
+		
+		System.out.println("<<Vetor>>");
+		for (int i = 0; i < vetor.length; i++) {
 
-		for (i = 0; i < vet.length; i++) {
-
-			System.out.println("Informe o numero: ");
-			vet[i] = in.nextDouble();
-
+			System.out.printf("Informe o valor do vetor[%d]: ", i);
+			vetor[i] = in.nextDouble();
 		}
-		System.out.println("Vetores informados com numeros negativos");
-		for (i = 0; i < vet.length; i++) {
-			if (vet[i] < 0) {
-				System.out.printf("V[%d] = %.1f\n", i, vet[i]);
+		System.out.println("\n<<Vetores com valores negativos>>");
+
+		for (int i = 0; i < vetor.length; i++) {
+			if (vetor[i] < 0) {
+				System.out.printf("V[%d] = %.1f", i, vetor[i]);
+				System.out.println();
+				cont++;
 			}
-
 		}
-
+		if (cont == 0) {
+			System.out.println("Nenhum valor negativo encontrado");
+		}
 	}
-
 }
