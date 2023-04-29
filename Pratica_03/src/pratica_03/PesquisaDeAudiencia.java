@@ -7,54 +7,72 @@ public class PesquisaDeAudiencia {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 
-		double canal2 = 0;
-		double canal4 = 0;
-		double canal5 = 0;
-		double canal7 = 0;
-		double canal12 = 0;
+		double cont12 = 0;
+		double cont7 = 0;
+		double cont5 = 0;
+		double cont4 = 0;
+		double cont2 = 0;
+		double cont;
 		double total = 0;
-		
-		System.out.println("pesquisa de audiencia");
-		
-		System.out.print("Informe o numero do canal: ");
-		int canal = in.nextInt();
-		
-		while(canal == 12 || canal == 7 || canal == 5 || canal == 4 || canal == 2 ) {
-		
-			System.out.print("Numero de pessoas que estão assistindo: ");
-			int pessoas = in.nextInt();
-			
-			total+=pessoas;
-			
-			if(canal == 12) {
-				canal12+=pessoas;
-			}else if(canal == 7) {
-				canal7 += pessoas;
-			}else if (canal == 5) {
-				canal5 += pessoas;
-			}else if (canal == 4) {
-				canal4 += pessoas;
-			}else {
-				canal2+=pessoas;
+		int opcao;
+
+		System.out.println("<<Pesquisa de audiencia>>");
+
+		do {
+			System.out.println("Informe o canal que esta assistindo: " + "(12) " + "(7) " + "(5) " + "(4) " + "(2) ");
+			opcao = in.nextInt();
+
+			switch (opcao) {
+			case 12:
+				System.out.println("O numero de pessoas incluindo você que estão assistindo: ");
+				cont = in.nextInt();
+				cont12 += cont;
+				total += cont;
+				break;
+
+			case 7:
+				System.out.println("O numero de pessoas incluindo você que estão assistindo: ");
+				cont = in.nextInt();
+				cont7 += cont;
+				total += cont;
+				break;
+
+			case 5:
+				System.out.println("O numero de pessoas incluindo você que estão assistindo: ");
+				cont = in.nextInt();
+				cont5 += cont;
+				total += cont;
+				break;
+
+			case 4:
+				System.out.println("O numero de pessoas incluindo você que estão assistindo: ");
+				cont = in.nextInt();
+				cont4 += cont;
+				total += cont;
+				break;
+
+			case 2:
+				System.out.println("O numero de pessoas incluindo você que estão assistindo: ");
+				cont = in.nextInt();
+				cont2 += cont;
+				total += cont;
+				break;
+
+			default:
+				System.out.println("Opção inválida!!!");
 			}
-			
-			System.out.println("----------------------------");
-			System.out.print("Informe o numero do canal: ");
-			canal = in.nextInt();
-			
-			
-		}
-		if (canal==0) {
-			System.out.println("fim");	
-			
-		}
-		System.out.println("-----------------------------------------");
-		System.out.println("PERCENTUAL DE AUDIENCIA DA PESQUISA");
-		System.out.format("CANAL 12: %.1f%%\n",(canal12*100/total));
-		System.out.format("CANAL 7: %.1f%%\n",(canal7*100/total));
-		System.out.format("CANAL 5: %.1f%%\n",(canal5*100/total));
-		System.out.format("CANAL 4: %.1f%%\n",(canal4*100/total));
-		System.out.format("CANAL 2: %.1f%%\n",(canal2*100/total));
+			System.out.println("-----------------------------------------------------------------------");
+
+		} while (opcao != 0);
+
+		System.out.println("\n<<Percentual de audiencia>>\n");
+
+		System.out.printf("canal 12: %.1f %%\n", cont12 * 100 / total);
+		System.out.printf("canal 7: %.1f %%\n", cont7 * 100 / total);
+		System.out.printf("canal 5: %.1f %%\n", cont5 * 100 / total);
+		System.out.printf("canal 4: %.1f %%\n", cont4 * 100 / total);
+		System.out.printf("canal 2: %.1f %%\n", cont2 * 100 / total);
+
 	}
 
 }
